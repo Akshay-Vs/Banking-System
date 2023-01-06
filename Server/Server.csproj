@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\GlobalLibrary\GlobalLibrary.csproj" />
+    <ProjectReference Include="..\GlobalLibrary\GlobalLibrary.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,20 +5,20 @@ VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorConsole", "OperatorConsole\OperatorConsole.csproj", "{8C7C9C6B-073E-4D9B-9965-5D7A154DACE7}"
 	ProjectSection(ProjectDependencies) = postProject
-		{3040568F-4EE8-438B-A43F-F684CC294C87} = {3040568F-4EE8-438B-A43F-F684CC294C87}
+		{DAEB4E86-72ED-4334-88D8-617A745872F4} = {DAEB4E86-72ED-4334-88D8-617A745872F4}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{439BDD67-B820-435F-8743-1D0B51496094}"
 	ProjectSection(ProjectDependencies) = postProject
-		{4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB} = {4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB}
+		{DAEB4E86-72ED-4334-88D8-617A745872F4} = {DAEB4E86-72ED-4334-88D8-617A745872F4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMConsole", "ATMConsole\ATMConsole.csproj", "{4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATMConsole", "ATMConsole\ATMConsole.csproj", "{4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB}"
 	ProjectSection(ProjectDependencies) = postProject
-		{3040568F-4EE8-438B-A43F-F684CC294C87} = {3040568F-4EE8-438B-A43F-F684CC294C87}
+		{DAEB4E86-72ED-4334-88D8-617A745872F4} = {DAEB4E86-72ED-4334-88D8-617A745872F4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalLibrary", "..\GlobalLibrary\GlobalLibrary.csproj", "{3040568F-4EE8-438B-A43F-F684CC294C87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalLibrary", "GlobalLibrary\GlobalLibrary.csproj", "{DAEB4E86-72ED-4334-88D8-617A745872F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +38,10 @@ Global
 		{4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB03DFA-A901-4BE4-8D00-0EB20A9CA7CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3040568F-4EE8-438B-A43F-F684CC294C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3040568F-4EE8-438B-A43F-F684CC294C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3040568F-4EE8-438B-A43F-F684CC294C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3040568F-4EE8-438B-A43F-F684CC294C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

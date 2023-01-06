@@ -16,4 +16,5 @@ namespace Global.IO
         public static void WriteLine(string format, object arg0) => Console.WriteLine(format, arg0, Console.ForegroundColor = ForegroundColor);
         public static void Write(string format) => Console.Write(format, Console.ForegroundColor = ForegroundColor);
     }
+
 }

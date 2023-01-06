@@ -1,9 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using McMaster.Extensions.CommandLineUtils;
-using MongoDB.Driver;
-using MongoDB.Bson;
 using Global.IO;
-using OperatorConsole.TCPServer;
+
 
 namespace Operator
 {
@@ -72,7 +71,7 @@ namespace Operator
                     if (!login)
                     {
                         string response = TCPOps.Login(nameArgument.Value, passwordArgument.Value);
-                        IO.WriteLine(response);
+                        Console.WriteLine(response);
                         login = true;
                     }
                     else IO.WriteLine("You are already logged in. Logout to create new instance");
@@ -88,7 +87,11 @@ namespace Operator
                 logoutCommand.OnExecute(() =>
                 {
                     login = false;
+                    app.Dispose();
+                    var path = Process.GetCurrentProcess().MainModule.FileName;
+                    Process.Start(path);
                     TCPOps.Close();
+                    Environment.Exit(0);
                 });
             });
 

@@ -10,6 +10,7 @@
     <PackageReference Include="Helpers.McMaster.Extensions.CommandLineUtils" Version="1.0.0" />
     <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>

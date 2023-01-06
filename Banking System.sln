@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATMConsole", "ATMConsole\AT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalLibrary", "GlobalLibrary\GlobalLibrary.csproj", "{DAEB4E86-72ED-4334-88D8-617A745872F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{55BEFB28-2794-4083-A8AF-0C94F549625C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAEB4E86-72ED-4334-88D8-617A745872F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55BEFB28-2794-4083-A8AF-0C94F549625C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55BEFB28-2794-4083-A8AF-0C94F549625C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55BEFB28-2794-4083-A8AF-0C94F549625C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55BEFB28-2794-4083-A8AF-0C94F549625C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

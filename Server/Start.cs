@@ -26,10 +26,11 @@ namespace ConsoleApplication
                 string response = String.Empty;
 
                 // Logics
-                if(request.id == "login")
+                if (request.id == "login")
                 {
                     response = $"Welcome {request.userName}";
                 }
+                else if (request.id == "close") break;
 
                 server.Write(response);
 

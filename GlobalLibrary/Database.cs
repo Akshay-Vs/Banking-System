@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using MongoDB.Driver;
+using Global.Types;
 
-namespace Database
+namespace Global.Database
 {
-    class DataBase
+    public class DataBase
     {
         private readonly IMongoCollection<User> collection;
         private readonly IMongoDatabase database;
@@ -32,11 +33,10 @@ namespace Database
                     CountryCode = json.cCcode,
                     Phone = json.phone,
                     AccountType = json.type,
-                    RegistrationDate = DateTime.Now.ToString()
+                    RegistrationDate = DateTime.Now
                 },
                 Access = new Access
                 {
-                    AccessType = json.access,
                     Pin = json.pin
                 },
                 Balance = new Balance
@@ -46,13 +46,14 @@ namespace Database
                     Credit = 0.00
                 },
             };
+            
             try
             {
                 collection.InsertOne(user);
                 return $"Created {json}";
             }
 
-            catch (Exception e) { return e.Message};
+            catch (Exception e) { return e.Message; }
         }
     }
 }

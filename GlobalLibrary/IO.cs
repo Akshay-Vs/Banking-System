@@ -15,6 +15,12 @@ namespace Global.IO
         public static void WriteLine(string format) => Console.WriteLine(format, Console.ForegroundColor = ForegroundColor);
         public static void WriteLine(string format, object arg0) => Console.WriteLine(format, arg0, Console.ForegroundColor = ForegroundColor);
         public static void Write(string format) => Console.Write(format, Console.ForegroundColor = ForegroundColor);
+
+        public static string Input(string format)
+        {
+            IO.Write(format);
+            return Console.ReadLine();
+        }
     }
 
 }

@@ -1,7 +1,7 @@
 ﻿using Global.TCPConnection;
-using Global.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Global.Types;
 
 namespace Operator
 {
@@ -23,6 +23,13 @@ namespace Operator
             };
             var json = JsonConvert.SerializeObject(body);
             connection.Write(json);
+            return connection.Read();
+        }
+
+        public static string New(string data)
+        {
+            connection = new TCPClient(ip, port);
+            connection.Write(data);
             return connection.Read();
         }
 

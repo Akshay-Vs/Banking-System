@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 using McMaster.Extensions.CommandLineUtils;
 using Global.IO;
-
 
 namespace Operator
 {
@@ -22,20 +24,46 @@ namespace Operator
             app.Command("new", newCommand =>
             {
                 newCommand.Description = "Create a new user";
-                var typeArgument = newCommand.Argument("TYPE", "The type of the User");
-                var nameOption = newCommand.Option("-n|--name <NAME>", "The name of the User", CommandOptionType.SingleValue);
-                var idOption = newCommand.Option("-i|--id <ID>", "The ID of the User", CommandOptionType.SingleValue);
                 var forceOption = newCommand.Option("-f|--force", "Force the update", CommandOptionType.NoValue);
+
                 newCommand.HelpOption("-?|-h|--help");
 
                 newCommand.OnExecute(() =>
                 {
-                    //CreateUser();
-                    IO.WriteLine(forceOption.Value());
-                    IO.WriteLine(idOption.Value());
-                    IO.WriteLine(nameOption.Value());
-                    IO.WriteLine(typeArgument.Value);
                     
+                    string name = IO.Input("Enter your name: ");
+                    string age = IO.Input("Enter Age: ");
+                    string password = IO.Input("Enter Password: ");
+                    string phone = IO.Input("Enter Phone Number: ");
+                    string cCode = IO.Input("Enter country code: ");
+                    string email = IO.Input("Enter Email address: ");
+                    string type = IO.Input("Enter Account Type: ");
+                    string pin = IO.Input("Enter a 6 digit pin: ");
+
+                    bool isNumeric = Regex.IsMatch(pin, @"^\d+$");
+                    while (pin.Length != 6 && !isNumeric)
+                    {
+                        IO.WriteError("Invalid PIN", null);
+                        pin = IO.Input("Enter a 6 digit pin: ");
+                    }
+
+                    Dictionary<string, string> data = new Dictionary<string, string>()
+                    {
+                        { "id", "new" },
+                        { "name", name },
+                        { "age", age },
+                        { "password", password },
+                        { "phone", phone },
+                        { "cCode", cCode },
+                        { "email", email },
+                        { "type", type },
+                        { "pin", pin }
+                    };
+
+                    string json = JsonConvert.SerializeObject(data);
+
+                    string response = TCPOps.New(json);
+                    IO.WriteLine(response);
                     return 0;
                 });
             });
@@ -94,6 +122,34 @@ namespace Operator
                     Environment.Exit(0);
                 });
             });
+
+            app.Command("send", sendCommand =>
+            {
+                sendCommand.Description = "Send ECoin to another user";
+                var amountArgument = sendCommand.Argument("AMOUNT", "The amount of ECoin to send");
+                var currencyArgument = sendCommand.Argument("CURRENCY", "The currency to use for the transaction (ECoin or Credit)");
+
+                sendCommand.Command("to", toCommand =>
+                {
+                    toCommand.Description = "Specify the recipient of the ECoin";
+                    var recipientArgument = toCommand.Argument("RECIPIENT", "The ID of the recipient");
+                    toCommand.OnExecute(() =>
+                    {
+                        // Get the values of the arguments and options
+                        double amount = Convert.ToDouble(amountArgument.Value);
+                        string currency = currencyArgument.Value;
+                        string recipient = recipientArgument.Value;
+
+                        // Perform the transaction
+                        // ...
+
+                        IO.WriteLine($"sending {amount} {currency} to {recipient}");
+
+                        return 0;
+                    });
+                });
+            });
+
 
 
 

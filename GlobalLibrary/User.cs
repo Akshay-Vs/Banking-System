@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Database
+namespace Global.Types
 {
     public class User
     {
@@ -29,16 +29,16 @@ namespace Database
         public string Name { get; set; }
 
         [BsonElement("Phone")]
-        public decimal Phone { get; set; }
+        public string Phone { get; set; }
 
         [BsonElement("Email")]
         public string Email { get; set; }
 
         [BsonElement("CountryCode")]
-        public int CountryCode { get; set; }
+        public string CountryCode { get; set; }
 
         [BsonElement("Age")]
-        public int Age { get; set; }
+        public string Age { get; set; }
 
         [BsonElement("Password")]
         public string Password { get; set; }
@@ -47,14 +47,11 @@ namespace Database
         public string AccountType { get; set; }
 
         [BsonElement("RegistrationDate")]
-        public string RegistrationDate { get; set; }
+        public BsonDateTime RegistrationDate { get; set; }
     }
 
     public class Access
     {
-        [BsonElement("AccessType")]
-        public string AccessType { get; set; }
-
         [BsonElement]
         public string Pin { get; set; }
     }
